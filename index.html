@@ -1,0 +1,39 @@
+<!doctype html>
+<style>
+* {
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+}  
+body {
+  padding:0;
+  margin:0;
+  font-size:24px;
+  font-family: monospace;
+}
+textarea{
+  width: 100%;
+  height: calc(100vh - 50px);
+  font-size:24px;
+  color: white;
+  background:black;
+  border:none;
+}
+input {
+  line-height: 30px;
+  font-family: monospace;
+}
+#edit:checked ~ pre,
+#run:checked ~ textarea {
+  display:none;
+}
+</style>
+<input id=edit name=view type="radio" checked><label for=edit>Edit</label>
+<input id=run name=view type="radio" onclick="result.innerText = JSON.stringify(eval(source.value),undefined,2)"><label for=run>Run</label>
+<textarea id=source>function run(){
+  return {
+    "a":7
+  }
+}
+run()</textarea>
+<pre id=result></pre>
