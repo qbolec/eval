@@ -1,4 +1,6 @@
 <!doctype html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {
   padding:0;
@@ -28,12 +30,15 @@ input {
   display:none;
 }
 </style>
+</head>
+<body>
 <input id=edit name=view type="radio" checked><label for=edit>Edit</label>
 <input id=run name=view type="radio" onclick="result.innerText = JSON.stringify(eval(source.value),undefined,2)"><label for=run>Run</label>
 <textarea id=source>function run(){
   return {
-    "a":7
+    "a": 2+2,
   }
 }
 run()</textarea>
 <pre id=result></pre>
+</body>
